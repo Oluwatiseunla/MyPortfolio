@@ -757,6 +757,16 @@
 <!-- Navigation -->
 <nav role="navigation" aria-label="Main navigation">
   <a href="#home" class="logo"><img src="1.png" alt="Your Logo"></a>
+ .logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
   <ul class="nav-links" id="navLinks">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
