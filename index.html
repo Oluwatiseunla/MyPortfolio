@@ -159,12 +159,11 @@
     margin-bottom: 2.5rem; color: var(--white);
   }
   .section-heading span { color: var(--accent); }
-  .about-body {
-    font-size: 0.97rem; line-height: 1.85; color: var(--muted);
-    column-count: 2; column-gap: 3rem;
+  .about-prose {
+    font-size: 1rem; line-height: 1.9; color: var(--muted);
   }
-  .about-body p + p { margin-top: 1.2rem; }
-  @media (max-width: 700px) { .about-body { column-count: 1; } }
+  .about-prose p { margin-bottom: 1.6rem; }
+  .about-prose strong { color: var(--text); font-weight: 500; }
 
   /* SERVICES */
   .services-grid {
@@ -331,18 +330,49 @@
   </div>
 </div>
 
+<!-- ABOUT PREVIEW ON HOME -->
+<div style="max-width:1200px;margin:0 auto;padding:0 4rem 6rem;">
+  <div style="border-top:1px solid #2a2a2a;padding-top:4rem;">
+    <div style="font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9a96e;display:flex;align-items:center;gap:0.8rem;margin-bottom:1.5rem;">
+      <span style="display:block;width:32px;height:1px;background:#c9a96e;"></span>About Me
+    </div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#f0ede6;margin-bottom:2.5rem;">Who I Am</h2>
+    <div style="font-size:1rem;line-height:1.9;color:#888880;max-width:860px;">
+      <p style="margin-bottom:1.6rem;"><strong style="color:#f0ede6;font-weight:500;">Oluwaseun Nifemi</strong> is a Senior Data Scientist and ARTIBA-certified Artificial Intelligence Engineer with over seven years of experience designing and deploying end-to-end AI and analytics solutions across Africa. With a foundation in statistics from Obafemi Awolowo University and a career built at the intersection of data science, public policy, and humanitarian and language technology, she has a proven track record of translating complex data into meaningful, real-world impact across governance, healthcare, and development sectors.</p>
+
+      <p style="margin-bottom:1.6rem;">Currently, Oluwaseun serves as <strong style="color:#f0ede6;font-weight:500;">Technical Delivery and Operations Lead at EqualyzAI</strong>, where she guides cross-functional teams of developers and AI engineers in shipping production-ready solutions for underserved and last-mile markets. She led the development of <strong style="color:#f0ede6;font-weight:500;">Voice Bridge</strong>, an offline-first voice data platform engineered to operate on 2G feature phones with no internet dependency, eliminating longstanding barriers to connectivity and smartphone access for last-mile data collection across Africa.</p>
+
+      <p style="margin-bottom:1.6rem;">In her concurrent role as <strong style="color:#f0ede6;font-weight:500;">Senior Data Scientist and Technical Delivery Lead at Data Science Nigeria (DSN)</strong>, Oluwaseun has led a portfolio of high-impact initiatives. She spearheaded the AI for Humanitarian Responses project in partnership with the University College London, and co-led the development of a generative AI-based counseling chatbot in collaboration with Tulane University and DKT Nigeria — improving access to reproductive health services in rural and urban communities alike.</p>
+
+      <p style="margin-bottom:1.6rem;">Her contributions to governance and policy are equally significant. Oluwaseun co-facilitated a key subgroup on <strong style="color:#f0ede6;font-weight:500;">AI Research and Innovations at the Nigeria National Artificial Intelligence Strategy</strong>, and developed an AI literacy curriculum in partnership with the <strong style="color:#f0ede6;font-weight:500;">Tony Blair Institute</strong> to accelerate AI adoption across government parastatals in Nigeria, Uganda, Kenya, Rwanda, and Tunisia.</p>
+
+      <p style="margin-bottom:1.6rem;">Oluwaseun's research credentials include a paper presented at <strong style="color:#f0ede6;font-weight:500;">ICLR 2023</strong> in Rwanda, a work accepted by the <strong style="color:#f0ede6;font-weight:500;">American Public Health Association Journal in 2024</strong>, and a language digitization playbook co-authored as a <strong style="color:#f0ede6;font-weight:500;">Data.org Fellow</strong>.</p>
+
+      <p style="margin-bottom:1.6rem;">Earlier in her career, she supported the <strong style="color:#f0ede6;font-weight:500;">EKO360 Data Warehouse and Analytics project</strong> funded by the Bill &amp; Melinda Gates Foundation, and delivered bespoke AI and data science training to institutions including Access Bank Nigeria, the Lagos State Bureau of Statistics, and Enugu State Government.</p>
+
+      <p>With deep technical fluency across Python, SQL, Azure, Power BI, R, QGIS, PostgreSQL, and machine learning frameworks, Oluwaseun combines rigorous data science with a strong instinct for stakeholder communication. Her vision is of AI not as a distant tool for the privileged few, but as an accessible, practical force for equity — one data-driven decision at a time.</p>
+    </div>
+  </div>
+</div>
+
 <!-- ABOUT -->
 <div id="about-section" class="page">
-  <section>
-    <div class="home-tag" style="margin-bottom:1rem;">About Me</div>
-    <h2 class="section-heading">Passionate about <span>AI for good</span></h2>
-    <div class="about-body">
-      <p><strong style="color:var(--text)">Oluwaseun Nifemi</strong> is an AI Engineer and Full-Stack Developer with over seven years of experience building and deploying impactful AI and software solutions. Specialising in MLOps, LLM-based systems, and multilingual AI applications, she has a proven track record of delivering scalable, production-ready platforms in education, governance, and healthcare across Africa.</p>
-      <p>At <strong style="color:var(--text)">EqualyzAI</strong>, Oluwaseun led the creation of <strong style="color:var(--text)">uLearn</strong>, an AI-powered learning platform designed to address the shortage of quality STEM education in underserved Nigerian schools. By integrating fine-tuned large language models and local-language content, uLearn expanded access to education for thousands of students, showcased at GITEX Africa 2024 and presented at the Global AI Summit Rwanda 2025.</p>
-      <p>Previously, at <strong style="color:var(--text)">Data Science Nigeria (DSN)</strong>, she fine-tuned NLP models for Yoruba-language science education, developed AI-powered chatbots, and implemented cloud-native APIs with LangChain and LlamaIndex. These projects strengthened her expertise in AI for low-resource languages and educational technology.</p>
-      <p>Oluwaseun combines her technical skills with leadership and mentorship, training over 150 learners in AI and full-stack development through programs like DeepTech Ready, IndabaX Nigeria, and Azure Volunteer initiatives. Her work has earned accolades including the Project Ownership Award and Most Resourceful Staff recognition.</p>
-      <p>A frequent presenter at international conferences such as ICLR, AfricaNLP, and the Deep Learning Indaba, Oluwaseun actively contributes to the global AI community, fostering cross-cultural collaboration and promoting ethical, responsible AI.</p>
-      <p>With deep expertise in Python, Node.js, FastAPI, AWS, Docker, Kubernetes, and machine learning frameworks, she blends AI engineering with full-stack development to create solutions that are innovative and socially meaningful.</p>
+  <section style="max-width:860px;">
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--white);margin-bottom:2.5rem;">About Me</h1>
+    <div class="about-prose">
+      <p><strong>Oluwaseun Nifemi</strong> is a Senior Data Scientist and ARTIBA-certified Artificial Intelligence Engineer with over seven years of experience designing and deploying end-to-end AI and analytics solutions across Africa. With a foundation in statistics from Obafemi Awolowo University and a career built at the intersection of data science, public policy, and humanitarian and language technology, she has a proven track record of translating complex data into meaningful, real-world impact across governance, healthcare, and development sectors.</p>
+
+      <p>Currently, Oluwaseun serves as <strong>Technical Delivery and Operations Lead at EqualyzAI</strong>, where she guides cross-functional teams of developers and AI engineers in shipping production-ready solutions for underserved and last-mile markets. She led the development of <strong>Voice Bridge</strong>, an offline-first voice data platform engineered to operate on 2G feature phones with no internet dependency, eliminating longstanding barriers to connectivity and smartphone access for last-mile data collection across Africa.</p>
+
+      <p>In her concurrent role as <strong>Senior Data Scientist and Technical Delivery Lead at Data Science Nigeria (DSN)</strong>, Oluwaseun has led a portfolio of high-impact initiatives. She spearheaded the AI for Humanitarian Responses project in partnership with the University College London, conducting needs assessments for grantees and embedding AI methodology across humanitarian organizations. She also co-led the development of a generative AI-based counseling chatbot in collaboration with Tulane University and DKT Nigeria — a solution that emulates the work of human counselors at family planning centers across the country, improving access to reproductive health services in rural and urban communities alike.</p>
+
+      <p>Her contributions to governance and policy are equally significant. Oluwaseun co-facilitated a key subgroup on <strong>AI Research and Innovations at the Nigeria National Artificial Intelligence Strategy</strong>, convening the country's top domestic and international AI experts to chart a forward-looking path for AI development. She also led the <strong>Edu-AI project for AI4Development</strong>, a Canadian and Swedish government-funded initiative in collaboration with the University of Lagos, and developed an AI literacy curriculum in partnership with the <strong>Tony Blair Institute</strong> to accelerate AI adoption across government parastatals in Nigeria, Uganda, Kenya, Rwanda, and Tunisia.</p>
+
+      <p>Oluwaseun's research credentials are backed by peer-reviewed publications. She co-authored a paper presented at <strong>ICLR 2023</strong> in Rwanda on predicting behavioral changes in reproductive health using anonymized audio data, and co-authored a work accepted by the <strong>American Public Health Association Journal in 2024</strong> on AI-driven family planning content development in Nigeria. She has also co-authored a comprehensive language digitization playbook as a <strong>Data.org Fellow</strong>, providing actionable guidance for governments and development partners on leveraging AI for low-resource languages.</p>
+
+      <p>Earlier in her career, Oluwaseun supported the <strong>EKO360 Data Warehouse and Analytics project</strong>, funded by the Bill &amp; Melinda Gates Foundation, which digitized data infrastructure for the Lagos State Bureau of Statistics. She has also delivered bespoke AI and data science training to institutions including Access Bank Nigeria, the Lagos State Bureau of Statistics, and Enugu State Government.</p>
+
+      <p>With deep technical fluency across Python, SQL, Azure, Power BI, R, QGIS, PostgreSQL, and machine learning frameworks, Oluwaseun combines rigorous data science with a strong instinct for stakeholder communication and cross-sector collaboration. Her vision is of AI not as a distant tool for the privileged few, but as an accessible, practical force for equity — one data-driven decision at a time.</p>
     </div>
   </section>
 </div>
