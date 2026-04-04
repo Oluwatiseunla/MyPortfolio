@@ -258,7 +258,6 @@
   /* PAGE SECTIONS hidden by default */
   .page { display: none; }
   .page.active { display: block; }
-  #home-section { display: block; }
 </style>
 </head>
 <body>
@@ -552,7 +551,29 @@
   <p>Built by Softmax Tech Solutions &nbsp;|&nbsp; Oluwaseun Nifemi &copy; 2025</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   function showPage(id) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    do
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(a => a.style.color = '');
+    const map = {
+      'home-section': 'Home',
+      'about-section': 'About',
+      'services-section': 'Services',
+      'resume-section': 'Resume',
+      'work-section': 'Work',
+      'contact-section': 'Contact'
+    };
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      if (a.textContent.trim() === map[id]) a.style.color = 'var(--accent)';
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+  // Set home as active on load and highlight Home nav
+  window.addEventListener('DOMContentLoaded', function() {
+    showPage('home-section');
+  });
+</script>
+</body>
+</html>
