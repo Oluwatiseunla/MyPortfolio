@@ -274,6 +274,30 @@
   /* PAGE SECTIONS hidden by default */
   .page { display: none; }
   .page.active { display: block; }
+
+  /* Resume Tabs */
+  .resume-tabs {
+    display: flex; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap;
+  }
+  .resume-tab {
+    padding: 0.6rem 1.6rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 50px;
+  }
+  .resume-tab:hover { border-color: var(--accent); color: var(--accent); }
+  .resume-tab.active { background: var(--accent); color: #0a0a0a; border-color: var(--accent); font-weight: 500; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+  .timeline-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-top: 0.5rem; }
+  .skills-category { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); margin-bottom: 0.8rem; font-weight: 400; }
 </style>
 </head>
 <body>
@@ -423,44 +447,124 @@
 <div id="resume-section" class="page">
   <section>
     <div class="home-tag" style="margin-bottom:1rem;">My Resume</div>
-    <h2 class="section-heading">Experience &amp; <span>Education</span></h2>
-    <div class="resume-layout">
-      <div class="resume-section">
-        <h3>Experience</h3>
-        <p style="font-size:0.92rem;color:var(--muted);line-height:1.75;margin-bottom:2rem;">Full-Stack Engineer &amp; AI Specialist with 7+ years of experience developing and deploying full-scale AI/ML systems. Expertise in MLOps, backend architecture, and scalable pipelines. Passionate about building ethical, responsible AI for sustainable impact.</p>
-        <div class="timeline-item">
-          <div class="timeline-date">July 2023 – Present</div>
-          <div class="timeline-title">AI Engineer</div>
-          <div class="timeline-org">EqualyzAI</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">April 2022 – June 2023</div>
-          <div class="timeline-title">AI Researcher / Data Scientist</div>
-          <div class="timeline-org">Data Science Nigeria</div>
+    <h2 class="section-heading">My <span>Experience</span></h2>
+
+    <!-- Tab Buttons -->
+    <div class="resume-tabs">
+      <button class="resume-tab active" onclick="switchTab('experience')">Experience</button>
+      <button class="resume-tab" onclick="switchTab('education')">Education</button>
+      <button class="resume-tab" onclick="switchTab('skills')">Skills</button>
+      <button class="resume-tab" onclick="switchTab('research')">Research</button>
+    </div>
+
+    <!-- Experience -->
+    <div id="tab-experience" class="tab-content active">
+      <div class="timeline-item">
+        <div class="timeline-date">January 2025 – Present</div>
+        <div class="timeline-title">Technical Delivery and Operations Lead</div>
+        <div class="timeline-org">EqualyzAI</div>
+        <p class="timeline-desc">Leading end-to-end technical delivery of AI-powered products for underserved markets. Developed Voice Bridge — an offline-first voice data platform engineered to run on 2G feature phones with zero internet dependency. Managing consulting arm across telecommunications, healthcare, and language technology sectors.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">January 2023 – Present</div>
+        <div class="timeline-title">Senior Data Scientist / Technical Delivery Team Lead</div>
+        <div class="timeline-org">Data Science Nigeria (DSN)</div>
+        <p class="timeline-desc">Led AI for Humanitarian Responses project in partnership with University College London. Co-developed a generative AI-based counselling chatbot with Tulane University and DKT Nigeria. Facilitated the Nigeria National AI Strategy subgroup on AI Research and Innovations. Developed AI literacy curriculum with the Tony Blair Institute across 5 African nations.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">April 2021 – December 2022</div>
+        <div class="timeline-title">Data Scientist</div>
+        <div class="timeline-org">Data Science Nigeria (DSN)</div>
+        <p class="timeline-desc">Led the Chevron nationwide AI for Energy hackathon across 75 universities. Delivered EKO360 Data Warehouse project funded by Bill &amp; Melinda Gates Foundation for Lagos State Bureau of Statistics. Contributed to Africa's Biggest AI Bootcamp with 10,000+ participants from 30 countries.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">January 2015 – March 2021</div>
+        <div class="timeline-title">Consultant, Data Analyst</div>
+        <div class="timeline-org">Senny Group Nigeria</div>
+        <p class="timeline-desc">Designed and managed business data using SPSS, Microsoft Project, Excel, and E-views. Built business intelligence platforms using Power BI and delivered data storytelling and visualization solutions to clients.</p>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div id="tab-education" class="tab-content">
+      <div class="timeline-item">
+        <div class="timeline-date">September 2009 – September 2014</div>
+        <div class="timeline-title">B.Sc. Statistics — Second Class Upper (4.25/5.0)</div>
+        <div class="timeline-org">Obafemi Awolowo University (OAU), Ile-Ife, Nigeria</div>
+        <p class="timeline-desc">Coursework: Mathematics for Physical Scientists, Econometrics, Artificial Intelligence, Statistical Methods, Experimental Designs, Research Methods, Stochastic Process, Organisation Behavior.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Certification</div>
+        <div class="timeline-title">Certified Artificial Intelligence Engineer</div>
+        <div class="timeline-org">Artificial Intelligence Board of America (ARTIBA)</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Certification</div>
+        <div class="timeline-title">Applied Data Science I: Scientific Computing &amp; Python (with honors)</div>
+        <div class="timeline-org">WorldQuant University</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Certification</div>
+        <div class="timeline-title">Full Stack Software Engineer</div>
+        <div class="timeline-org">ALX Africa</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Certification</div>
+        <div class="timeline-title">Data Analytics Virtual Experience</div>
+        <div class="timeline-org">Accenture North America, Forage</div>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div id="tab-skills" class="tab-content">
+      <div style="margin-bottom:2rem;">
+        <h4 class="skills-category">Data &amp; Analytics</h4>
+        <div class="skills-wrap">
+          <span class="skill-tag">Python</span><span class="skill-tag">R</span><span class="skill-tag">SQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">NoSQL</span><span class="skill-tag">SPSS</span><span class="skill-tag">Power BI</span><span class="skill-tag">Tableau</span><span class="skill-tag">Data Studio</span><span class="skill-tag">Excel</span><span class="skill-tag">QGIS</span>
         </div>
       </div>
-      <div class="resume-section">
-        <h3>Skills</h3>
+      <div style="margin-bottom:2rem;">
+        <h4 class="skills-category">AI &amp; Machine Learning</h4>
         <div class="skills-wrap">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">FastAPI</span>
-          <span class="skill-tag">React.js</span>
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">AWS</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Kubernetes</span>
-          <span class="skill-tag">Terraform</span>
-          <span class="skill-tag">LangChain</span>
-          <span class="skill-tag">LlamaIndex</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">MLOps</span>
-          <span class="skill-tag">NLP</span>
-          <span class="skill-tag">LLMs</span>
-          <span class="skill-tag">Computer Vision</span>
+          <span class="skill-tag">Scikit-Learn</span><span class="skill-tag">Pandas</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">LangChain</span><span class="skill-tag">LlamaIndex</span><span class="skill-tag">NLP</span><span class="skill-tag">LLMs</span><span class="skill-tag">MLOps</span><span class="skill-tag">Computer Vision</span><span class="skill-tag">FastAPI</span>
+        </div>
+      </div>
+      <div style="margin-bottom:2rem;">
+        <h4 class="skills-category">Cloud &amp; DevOps</h4>
+        <div class="skills-wrap">
+          <span class="skill-tag">Microsoft Azure</span><span class="skill-tag">AWS</span><span class="skill-tag">Google Cloud</span><span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">Terraform</span><span class="skill-tag">Azure Synapse</span><span class="skill-tag">Oracle Data Integrator</span>
+        </div>
+      </div>
+      <div>
+        <h4 class="skills-category">Web &amp; Software</h4>
+        <div class="skills-wrap">
+          <span class="skill-tag">Node.js</span><span class="skill-tag">React.js</span><span class="skill-tag">Next.js</span><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">SAP BI</span>
         </div>
       </div>
     </div>
+
+    <!-- Research -->
+    <div id="tab-research" class="tab-content">
+      <div class="timeline-item">
+        <div class="timeline-date">ICLR 2023 — Rwanda</div>
+        <div class="timeline-title">Predicting Ability and Motivation to Adopt Reproductive Health Behavioral Changes</div>
+        <div class="timeline-org">International Conference on Learning Representations</div>
+        <p class="timeline-desc">Co-authored research using anonymized customer centre audio data to predict reproductive health behavioral change adoption across Nigeria.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">American Public Health Association Journal, 2024</div>
+        <div class="timeline-title">Content Development for the Honey &amp; Banana Family Planning Chatbot in Nigeria</div>
+        <div class="timeline-org">APHA Journal — Peer Reviewed</div>
+        <p class="timeline-desc">Applied AI techniques to identify local family planning terminologies and information needs for chatbot content development in Nigeria.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Data.org Fellowship</div>
+        <div class="timeline-title">Language Digitization Playbook for Low-Resource Languages</div>
+        <div class="timeline-org">Data.org</div>
+        <p class="timeline-desc">Executive report providing actionable step-by-step recommendations for governments, development partners, and private sector stakeholders on leveraging AI and language technologies for inclusive growth.</p>
+      </div>
+    </div>
+
   </section>
 </div>
 
@@ -568,6 +672,13 @@
   window.addEventListener('DOMContentLoaded', function() {
     showPage('home-section');
   });
+
+  function switchTab(tab) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.resume-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    event.target.classList.add('active');
+  }
 </script>
 </body>
 </html>
